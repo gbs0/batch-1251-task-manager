@@ -1,0 +1,28 @@
+<h1><%= @task.title %></h1>
+<div class="accordion my-4" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Details:
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong><%= @task.details %></strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+ <h3>Task completed?<h3>
+  <% if @task.completed %>
+    <span class="badge text-bg-success">Yes!</span>
+  <% else %>
+    <span class="badge text-bg-danger">No ):</span>
+  <% end %>
+</div>
+
+<%= link_to "Back to Tasks", tasks_path, class: "btn btn-secondary" %>
+<%= link_to "Edit Task", edit_task_path, class: "btn btn-warning" %>
+<%= link_to "Destroy Task", destroy_task_path(@task), class: "btn btn-danger", data: {turbo_method: :delete, confirm: "Are you sure?"}  %>

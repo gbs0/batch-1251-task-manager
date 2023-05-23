@@ -1,0 +1,10 @@
+<h1>Create new Task</h1>
+<%= form_with model: @task, class: "form-group" do |f| %>
+    <%= f.label "Title" %>
+    <%= f.text_field :title, placeholder: "Type task name", class: "form-control" %>
+    <%= f.label "Details:" %>
+    <%= f.text_field :details, placeholder: "Type task details", class: "form-control" %>
+    <%= f.submit "Create Task", class: "btn btn-success mt-4" %>
+<% end %>
+
+

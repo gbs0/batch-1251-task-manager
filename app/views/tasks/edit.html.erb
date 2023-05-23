@@ -1,0 +1,11 @@
+<h1>Edit Task</h1>
+
+<%= form_with model: @task, class: "form-group" do |f| %>
+    <%= f.label "Title" %>
+    <%= f.text_field :title, placeholder: "Edit Task Name", class: "form-control" %>
+    <%= f.label "Details:" %>
+    <%= f.text_field :details, placeholder: "Edit Details", class: "form-control" %>
+    <%= f.label "Completed?" %>
+    <%= f.check_box :completed, class: "d-block" %>
+    <%= f.submit "Edit Task", class: "btn btn-primary mt-4" %>
+<% end %>

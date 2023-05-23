@@ -1,0 +1,17 @@
+<h1>My Tasks</h1>
+
+<div class="my-4">
+    <ul class="list-group">
+    <% @tasks.each do |task| %>
+    <li class="list-group-item">
+        <% if task.completed %>
+          <input type="checkbox" disabled checked>
+        <% else %> 
+          <input type="checkbox" disabled>
+        <% end %>
+        <%= link_to task.title, task_path(task), class: "text-decoration-none" %></li>
+    <% end %>
+    </ul>
+</div>
+
+<%= link_to "Create Task", new_task_path, class: "btn btn-md btn-primary" %>
